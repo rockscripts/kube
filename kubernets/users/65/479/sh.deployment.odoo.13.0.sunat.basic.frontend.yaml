@@ -1,0 +1,56 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  namespace: olde22479
+  name: odoo  
+  labels:
+    app: odoo
+    tier: frontend
+spec:
+  strategy:
+    type: Recreate
+  selector:
+    matchLabels:
+      app: odoo
+  template:
+    metadata:
+      labels:
+        app: odoo
+        tier: frontend
+    spec:
+      imagePullSecrets:
+      - name: secret-microdoo
+      containers:        
+        - image: rockscripts/shdevops:13.7.sunat.basic
+          name: odoo
+          env:
+          - name: HOST
+            value: postgres
+          - name: USER
+            value: odoo
+          - name: PASSWORD
+            value: password
+          - name: ODOO_RC
+            value: /var/lib/odoo/odoo.conf
+          securityContext:
+            privileged: true
+            runAsUser: 0
+          ports:
+            - containerPort: 8071
+              name: odoo
+          volumeMounts:
+          - name: olde22479pv1
+            mountPath: /var/lib/odoo
+          readinessProbe:
+            exec:
+              command:
+              - /bin/bash
+              - -c  
+              - "cp /13.0/odoo.conf /var/lib/odoo"
+              - "chmod -R 777 /var/lib/odoo"
+              - "chown -R odoo /13.0"          
+              - "kill -HUP 1"
+      volumes:
+      - name: olde22479pv1
+        persistentVolumeClaim:
+          claimName: olde22479pv1

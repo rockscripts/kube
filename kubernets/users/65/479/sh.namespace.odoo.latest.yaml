@@ -1,0 +1,6 @@
+kind: Namespace
+apiVersion: v1
+metadata:
+  name: microdoo1
+  labels:
+    name: odoo
