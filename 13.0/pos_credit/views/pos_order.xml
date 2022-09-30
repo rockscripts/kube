@@ -1,0 +1,19 @@
+<odoo>
+  <data>
+    <!-- tree view -->
+    <record id="pos_order_credit_payment_terms_tree" model="ir.ui.view">
+        <field name="name">Credit Payment Orders Terms Tree</field>
+        <field name="model">pos.order</field>
+        <field name="type">tree</field>       
+        <field name="inherit_id" ref="point_of_sale.view_pos_pos_form"/> 
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <field name="payment_ids" position="after">
+              <group>
+                  <field string="Periodo Fijo" name="fixed_period" readonly="1"/>
+              </group>
+            </field>
+        </field>
+    </record>
+  </data>
+</odoo>

@@ -1,0 +1,28 @@
+<odoo>
+    <data>
+        
+        <record id="view_account_move_reversal_inherit" model="ir.ui.view">
+            <field name="name">account.move.reversal.form</field>
+            <field name="model">account.move.reversal</field>
+            <field name="inherit_id" ref="account.view_account_move_reversal" />
+            <field name="arch" type="xml">
+                
+                <xpath expr="/form/footer/button[@name='reverse_moves']" position="replace">
+                    <button string='Agregar Nota' name="reverse_moves" type="object" class="btn-primary"/>
+                </xpath>
+                <xpath expr="/form/group/group/field[@name='refund_method']" position="after">
+                    <field name="sunat_note" string="Nota" readonly='1'/>
+                    <field name="credit_discrepance" string="Discrepancia"  attrs="{'invisible':[('sunat_note','=','08')]}"/>
+                </xpath>
+                <xpath expr="/form/group/group/field[@name='sunat_note']" position="after">
+                    <field name="debit_discrepance" string="Discrepancia"  attrs="{'invisible':[('sunat_note','=','07')]}"/>
+                </xpath>
+                <xpath expr="/form/group/group/field[@name='reason']" position="replace">
+                     <field name="reason"  invisible='1'/>
+                </xpath>
+            </field>
+        </record>
+
+        
+    </data>
+</odoo>

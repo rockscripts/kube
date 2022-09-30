@@ -1,0 +1,39 @@
+<odoo>
+  <data>
+    <!-- tree view -->
+    <record id="credit_view_bank_statement_line_tree" model="ir.ui.view">
+        <field name="name"></field>
+        <field name="model">account.bank.statement.line</field>
+        <field name="type">tree</field>       
+        <field name="inherit_id" ref="account.view_bank_statement_line_tree"/>
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <field name="partner_id" position="before">
+                <field name="business_transaction_type" readonly="1"/>
+                <field name="fixed_period" readonly="1"/>
+            </field>
+        </field>
+    </record>
+    <!-- form view -->
+    <record id="credit_view_bank_statement_line_form" model="ir.ui.view">
+        <field name="name"></field>
+        <field name="model">account.bank.statement.line</field>
+        <field name="type">form</field>       
+        <field name="inherit_id" ref="account.view_bank_statement_line_form"/>
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <field name="sequence" position="after">
+              <group>
+                  <field name="company_id" invisible="1"/>
+                  <field name="business_transaction_type" readonly="1"/>
+                  <field name="fixed_period" readonly="1"/>
+                  <field name="payment_terms_period" readonly="1"/>
+                  <field name="payment_terms_cuotes" readonly="1"/>
+                  <field name="payment_terms" readonly="1"/>
+              </group>
+            </field>
+        </field>
+    </record>
+  </data>
+</odoo>
+

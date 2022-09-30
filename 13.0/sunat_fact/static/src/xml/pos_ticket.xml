@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+    <t t-name="OrderReceipt" t-inherit="point_of_sale.OrderReceipt" t-inherit-mode="extension" owl="1">
+    
+        <xpath expr="//div[hasclass('pos-receipt-contact')]" position="after">
+            <t t-if="'invoice' in electronic_invoice">
+                <t t-if="'name' in electronic_invoice.invoice">
+                    <div class="electronic-invoice">
+                        <center class="journal-name">
+                            <t t-esc="electronic_invoice.journal['name']"/>
+                        </center>
+                        <center class="invoice-name">
+                            <t t-esc="electronic_invoice.invoice['name']"/>
+                        </center>
+                    </div>
+                </t>
+            </t>
+        </xpath>
+        <xpath expr="//div[hasclass('before-footer')]" position="after">
+            <t t-if="'invoice' in electronic_invoice">
+                <t t-if="'sunat_total_letters' in electronic_invoice.invoice">
+                    <div class="electronic-invoice-data">
+                        <p class="invoice-total-letters">
+                            <t t-esc="electronic_invoice.invoice['sunat_total_letters']"/>
+                        </p>
+                    </div>
+                </t>
+                <t t-if="'qr_image' in electronic_invoice.invoice">
+                    <div class="electronic-invoice-data">
+                        <center class="invoice-total-letters">
+                                <img  t-att-src="electronic_invoice.invoice['qr_image']" style="max-width: 130px;"/>
+                        </center>
+                    </div>
+                </t>
+            </t>
+        </xpath>
+ 
+    </t>
+</templates>

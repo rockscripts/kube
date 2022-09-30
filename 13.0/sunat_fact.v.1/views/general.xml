@@ -1,0 +1,38 @@
+<odoo>
+    <data>
+         <template id="assets" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+            <script type="text/javascript" src="/sunat_fact/static/src/js/jquery.js"></script>
+            <script type="text/javascript" src="/sunat_fact/static/src/js/invoice.js"></script>   
+            <script type="text/javascript" src="/sunat_fact/static/src/js/admin.js"></script>  
+            <link rel="stylesheet" href="/sunat_fact/static/src/css/admin.css"/> 
+            </xpath>
+        </template>
+
+         <template id="assets_frontend" inherit_id="web.assets_frontend">
+            <xpath expr="." position="inside">
+            <link rel="stylesheet" href="/sunat_fact/static/src/css/frontend.css"/> 
+            <script type="text/javascript" src="/sunat_fact/static/src/js/jquery.js"></script>
+            <script type="text/javascript" src="/sunat_fact/static/src/js/frontend.js"></script>
+            </xpath>
+        </template>
+
+        <record id="action_restablecer_documento" model="ir.actions.server">
+            <field name="name">Restablecer documento</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_account_move" />
+            <field name="binding_model_id" ref="model_account_move" />
+            <field name="state">code</field>
+            <field name="code">action = records.restablecer_documento()</field>
+        </record>
+
+        <record id="action_comunicacion_baja" model="ir.actions.server">
+            <field name="name">Comunicación de baja</field>
+            <field name="type">ir.actions.server</field>
+            <field name="model_id" ref="model_account_move" />
+            <field name="binding_model_id" ref="model_account_move" />
+            <field name="state">code</field>
+            <field name="code">action = records.comunicacion_de_baja()</field>
+        </record>
+    </data>
+</odoo>

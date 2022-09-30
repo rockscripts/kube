@@ -1,0 +1,16 @@
+<odoo>
+    <record model="ir.ui.view" id="view_account_journal_form_for_credits">
+        <field name="name">account.journal.form.credits</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+          <xpath expr="//page[last()]" position="after">
+            <page string="Fiados / Crédito" name="credit_payment_terms">      
+              <group>    
+                <field name="for_credit" />
+              </group>
+            </page>
+          </xpath>
+        </field>
+    </record>
+</odoo>

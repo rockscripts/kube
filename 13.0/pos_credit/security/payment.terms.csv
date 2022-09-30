@@ -1,0 +1,3 @@
+name,perm_create,group_id/id,model_id/id,perm_write,perm_unlink,perm_read
+credit_payment_terms,1,,pos_credit.model_payment_terms,1,1,1
+account_payment_term,1,,account.model_account_payment_term,1,1,1

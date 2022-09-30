@@ -1,0 +1,35 @@
+<odoo>
+    <data>
+        <record id="view_partners_form_website_extended" model="ir.ui.view">
+            <field name="name">sunat.view.res.partner.form</field>
+            <field name="model">res.partner</field>
+            <field name="inherit_id" ref="base.view_partner_form"/>
+            <field name="priority">1000</field>
+            <field name="arch" type="xml">
+                <field name="l10n_latam_identification_type_id" position="replace"/>
+                <xpath expr="//field[@name='vat']" position="replace">
+                    <field name="sunat_tipo_documento" string='Tipo documento' class="document-type"/>
+                </xpath>  
+                <xpath expr="//field[@name='street_name']" position="before">
+                    <div>
+                        <a href="https://bit.ly/2XPLH4k" target="_blank">
+                            <i class="fa fa-info-circle"></i>
+                        </a>
+                        <field name="ubigeo" placeholder="Ubicación Geográfica" invisible="1"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+
+        <function model="ir.model.fields" name="formbuilder_whitelist">
+            <value>res.partner</value>
+            <value eval="[
+                                'name', 'phone', 'email', 'city', 'zip', 'street', 
+                                'street2', 'state_id', 'country_id', 'vat', 'company_name', 
+                                'province_id', 'district_id','ubigeo','street_name','partner_id', 
+                                'is_company'
+                          ]"
+            />
+        </function>
+    </data>
+</odoo>

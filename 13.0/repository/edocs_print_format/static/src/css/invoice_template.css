@@ -1,0 +1,82 @@
+.addresses-container {
+    width: 100%;
+    font-size: 15px;
+    display: table;
+}
+
+.company_address,
+.partner_address {
+    display: table-cell;
+    width: 49%;
+    color: #444;
+}
+
+.address-title {
+    font-size: 20px;
+    text-shadow: 1px 2px #ccc;
+}
+
+.company-vat,
+.partner-vat {
+    vertical-align: middle;
+    margin-bottom: -9px;
+}
+
+.addresses-container h4 {
+    font-size: 20px;
+    text-shadow: 1px 2px #ccc;
+    color: black;
+}
+
+.o_report_layout_standard .address {
+    display: none
+}
+
+.invoice-invoice_sequence_number_next {
+    width: 86%;
+    display: table-cell;
+    vertical-align: middle;
+}
+.qr-container
+{
+    text-align: right;
+}
+.invoice-invoice_sequence_number_next h2 {
+    font-size: 20px;
+    font-weight: bold;
+}
+
+.invoice-qr {
+    width: 100px;
+    display: table-cell;
+    text-align: right;
+}
+
+
+.page .invoice-qr {
+    display: none!important;
+}
+
+.o_standard_footer {
+    margin-top: 20px!important;
+    border-top: 1px solid #ccc!important;
+    color: #555!important;
+    padding-top: 6px!important;
+    font-size: 15px!important;
+}
+#informations
+{
+    margin-top: 284px !important;
+}
+img.qr-image
+{
+    display: none;
+}
+.custom-details
+{
+
+}
+.mb0 > div:first-child span:first-child
+{
+ font-weight: bold;
+}

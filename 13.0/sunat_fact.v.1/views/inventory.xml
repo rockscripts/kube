@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+
+         <record id="delivery_form_view_extend" model="ir.ui.view">
+            <field name="name">delivery.ctaxarrier.form.view</field>
+            <field name="model">delivery.carrier</field>
+            <field name="inherit_id" ref="delivery.view_delivery_carrier_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//field[@name='name']" position="after">
+                    <div>
+                        <field name="ruc" string="RUC" placeholder="RUC"/>
+                    </div>
+                    <div>
+                        <field name="placa" string="Placa" placeholder="XXXXX"/>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+        
+        <record id="view_picking_withcarrier_out_form_extended" model="ir.ui.view">
+            <field name="name">delivery.stock.picking_withcarrier.form.view</field>
+            <field name="model">stock.picking</field>
+            <field name="inherit_id" ref="stock.view_picking_form"/>
+            <field name="arch" type="xml">
+                <div class="oe_button_box" position="after">
+                    <div class="oe_button_box">
+                        <field name="qr_image" widget="image" width="100" height="100"/>
+                    </div>
+                </div>
+                <xpath expr="//page[@name='note']" position="after">
+                    <page string="SUNAT e-fact" name='e_fact'>
+                        <group>
+                            <field name="api_message" string='Estado' placeholder='Documento contable sin emitir'/>
+                        </group>
+                    </page>
+                </xpath>
+            </field>
+        </record>
+
+    </data>
+
+</odoo>

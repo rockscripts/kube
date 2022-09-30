@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+        <record id="account_tax_form_sunat_tributo" model="ir.ui.view">
+            <field name="name">account.tax.form.sunat.tributo</field>
+            <field name="model">account.tax</field>
+            <field name="inherit_id" ref="account.view_tax_form"/>
+            <field name="arch" type="xml">
+                <data>
+                    <xpath expr="//page" position="after">
+                        <page string="Sunat e-Fact" name="sunat_tax">
+                            <group class="o_group_2_col">
+                                <field name="sunat_tributo" string='Sunat Tributo' class="o_input o_field_widget o_required_modifier custom_input"/>
+                                <field name="sunat_tributo_afectacion_igv" string='Afectación IGV' class="o_input o_field_widget o_required_modifier custom_input" attrs="{'invisible':[('sunat_tributo','==','10000')]}"/>
+                                <field name="sunat_tributo_calculo_isc" string='Cálculo ISC' class="o_input o_field_widget o_required_modifier custom_input" attrs="{'invisible':[('sunat_tributo','!=','2000')]}"/>
+                            </group>
+                        </page>
+                    </xpath>
+                </data>
+            </field>
+        </record>
+    </data>
+
+</odoo>

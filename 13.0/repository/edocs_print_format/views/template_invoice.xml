@@ -1,0 +1,128 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <template id="report_invoice_document" inherit_id="account.report_invoice_document">
+
+        
+           
+            <xpath expr="//h2" position="replace">
+                <t t-if="o and 'company_id' in o">
+                    <t t-set="company" t-value="o.company_id"></t>
+                </t>
+                <t t-if="not o or not 'company_id' in o">
+                    <t t-set="company" t-value="res_company"></t>
+                </t>
+                <link href="/edocs_print_format/static/src/css/invoice_template_pdf.css" rel="stylesheet"/>
+                <div class="invoice-invoice_sequence_number_next">
+                    <h2>
+                        <span t-field="o.journal_id.name"/>
+                        <h6 t-field="o.discrepance_text"/>
+                        
+                    </h2>
+                    <h2 class='qr-and-name'>
+                        <div>
+                            <span t-field="o.name"/>
+                        </div>
+                        <div class="qr-container">
+                            <span t-field="o.qr_image" t-options='{"widget": "image"}'/>
+                        </div>
+                    </h2>
+                </div>
+
+                <div class="adresses-company-partner">
+                    <div class="addresses-container">
+                        <div class="company_address">
+                            <div class="address-title">
+                                <h4>Emisor</h4>
+                            </div>
+                            <div class="company-vat">
+                                <strong>
+                                    <label t-esc="'RUC: '" t-if="company.partner_id.sunat_tipo_documento == '6'"/>
+                                    <label t-esc="'DNI: '" t-if="company.partner_id.sunat_tipo_documento == '1'"/>
+                                    <label t-esc="'Carnet extrangeria: '" t-if="company.partner_id.sunat_tipo_documento == '4'"/>
+                                    <label t-esc="'Pasaporte: '" t-if="company.partner_id.sunat_tipo_documento == '7'"/>
+                                    <label t-esc="'CED. DIPLOMATICA DE IDENTIDAD: '" t-if="company.partner_id.sunat_tipo_documento == 'A'"/>
+                                    <label t-esc="'DOC.IDENT.PAIS.RESIDENCIA-NO.D: '" t-if="company.partner_id.sunat_tipo_documento == 'B'"/>
+                                    <label t-esc="'Tax Identification invoice_sequence_number_next - TIN – Doc Trib PP.NN: '" t-if="company.partner_id.sunat_tipo_documento == 'C'"/>
+                                    <label t-esc="'Identification invoice_sequence_number_next - IN – Doc Trib PP. JJ: '" t-if="company.partner_id.sunat_tipo_documento == 'D'"/>
+                                </strong>
+                                <span t-field="company.vat"/>
+                            </div>
+                            <div>
+                                <address class="company_address" t-field="company.partner_id" t-options='{"widget": "contact", "fields": ["address","name"], "no_marker": true}'/>
+                            </div>
+                        </div>
+                        <div class="partner_address">
+                        <div class="address-title">
+                                <h4>Cliente</h4>
+                            </div>
+                            <div class="partner-vat">
+                                <strong> 
+                                    <label t-esc="'RUC: '" t-if="o.partner_id.sunat_tipo_documento == '6'"/>
+                                    <label t-esc="'DNI: '" t-if="o.partner_id.sunat_tipo_documento == '1'"/>
+                                    <label t-esc="'Carnet extrangeria: '" t-if="o.partner_id.sunat_tipo_documento == '4'"/>
+                                    <label t-esc="'Pasaporte: '" t-if="o.partner_id.sunat_tipo_documento == '47'"/>
+                                    <label t-esc="'CED. DIPLOMATICA DE IDENTIDAD: '" t-if="o.partner_id.sunat_tipo_documento == 'A'"/>
+                                    <label t-esc="'DOC.IDENT.PAIS.RESIDENCIA-NO.D: '" t-if="o.partner_id.sunat_tipo_documento == 'B'"/>
+                                    <label t-esc="'Tax Identification invoice_sequence_number_next - TIN – Doc Trib PP.NN: '" t-if="o.partner_id.sunat_tipo_documento == 'C'"/>
+                                    <label t-esc="'Identification invoice_sequence_number_next - IN – Doc Trib PP. JJ: '" t-if="o.partner_id.sunat_tipo_documento == 'D'"/>
+                                </strong>
+                                <span t-field="o.partner_id.vat"/>
+                            </div>
+                            <div>
+                                <address t-field="o.partner_id" t-options='{"widget": "contact", "fields": ["address", "name"], "no_marker": True}' />
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </xpath>
+            <xpath expr="//div[@id='total']" position="after">
+                <div class="custom-details">
+                    <span t-field="o.sunat_total_letters"/>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="external_layout_header" inherit_id="web.external_layout_standard">
+            <xpath expr="//div[1]" position="replace">
+                <link href="/edocs_print_format/static/src/css/invoice_template.css" rel="stylesheet"/>
+                <div class="header" style="font-family: 'Roboto', sans-serif;font-weight: bold;">
+                    <div style="display: table-cell;">
+                        <img t-if="company.logo" t-att-src="image_data_uri(company.logo)" style="max-height: 45px;opacity:1" alt="Logo"/>
+                    </div>
+                    <div style="padding-left:10px; color: black; font-size: 17px; display: table-cell;" t-esc="company.name.encode('utf-8', 'ignore').upper()"/>
+                    <hr></hr>
+                </div>
+            </xpath>
+        </template>
+
+        <template id="external_layout_footer" inherit_id="web.external_layout_standard">
+            <xpath expr="//div[@class='text-center']" position="replace">
+                <div class="text-center">
+                    <ul class="list-inline">
+                        <li t-if="company.phone" class="list-inline-item">
+                            <i class="fa fa-phone" role="img" aria-label="Phone" title="Phone"/>
+                            <span t-field="company.phone"/>
+                        </li>
+                        <li t-if="company.email" class="list-inline-item">
+                            <i class="fa fa-at" role="img" aria-label="Email" title="Email"/>
+                            <span t-field="company.email"/>
+                        </li>
+                        <li t-if="company.website" class="list-inline-item">
+                            <i class="fa fa-globe" role="img" aria-label="Website" title="Website"/>
+                            <span t-field="company.website"/>
+                        </li>
+                    </ul>
+                    <div t-field="company.report_footer"/>
+                    <div t-if="report_type == 'pdf'" class="text-muted">
+                        Page:
+                        <span class="page"/>
+                        of
+                        <span class="topage"/>
+                    </div>
+                </div>
+            </xpath>
+             
+        </template>
+    </data>
+</odoo>

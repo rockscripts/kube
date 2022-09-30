@@ -1,0 +1,180 @@
+<?xml version='1.0' encoding='ISO-8859-1'?>
+<CreditNote xmlns="urn:oasis:names:specification:ubl:schema:xsd:CreditNote-2" xmlns:cac="urn:oasis:names:specification:ubl:schema:xsd:CommonAggregateComponents-2" xmlns:cbc="urn:oasis:names:specification:ubl:schema:xsd:CommonBasicComponents-2" xmlns:ccts="urn:un:unece:uncefact:documentation:2" xmlns:ds="http://www.w3.org/2000/09/xmldsig#" xmlns:ext="urn:oasis:names:specification:ubl:schema:xsd:CommonExtensionComponents-2" xmlns:qdt="urn:oasis:names:specification:ubl:schema:xsd:QualifiedDatatypes-2" xmlns:sac="urn:sunat:names:specification:ubl:peru:schema:xsd:SunatAggregateComponents-1" xmlns:udt="urn:un:unece:uncefact:data:specification:UnqualifiedDataTypesSchemaModule:2" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+   <ext:UBLExtensions>
+      <ext:UBLExtension>
+         <ext:ExtensionContent>
+            <ds:Signature>
+               <ds:SignedInfo>
+                  <ds:CanonicalizationMethod Algorithm="http://www.w3.org/TR/2001/REC-xml-c14n-20010315"/>
+                  <ds:SignatureMethod Algorithm="http://www.w3.org/2000/09/xmldsig#rsa-sha1"/>
+                  <ds:Reference URI="">
+                     <ds:Transforms>
+                        <ds:Transform Algorithm="http://www.w3.org/2000/09/xmldsig#enveloped-signature"/>
+                     </ds:Transforms>
+                     <ds:DigestMethod Algorithm="http://www.w3.org/2000/09/xmldsig#sha1"/>
+                     <ds:DigestValue>QmiArG/Nu0MnQ83I0MW7MsTcBoo=</ds:DigestValue>
+                  </ds:Reference>
+               </ds:SignedInfo>
+               <ds:SignatureValue>YDdQaHT3sbKnw6kZadCX/dpK+T05wpiZyMhgWrQBf2P9loVeyehHDerev+zIQZIt
+ZS5vHVneIAe53W2KDxO6e5/hM3dew3ybEPyXN+Qx1KIdiOGA5gugTgqxIEHbXWAW
+5xd3qKpxNXQItJhu0jcfEfU3+7ekLP02yWHjgX9d40V2BBhhwlaJc+ZXdaaDb7Dz
+RbHvD6xENvjJuLFljwmKnpQcSUYWAcwnl63Dp2yH6NXwmU86IfwqKl5SvvYAx4df
+a7KfI8yzqGIEHKQKoiO1xlkhwqLeNKYSG7m5EX3SFb8pCggMIOMFkcmLUPKm79/C
+pPGSUKRRFtta2xNwkZQJQg==</ds:SignatureValue>
+               <ds:KeyInfo>
+<ds:X509Data>
+<ds:X509Certificate>MIIFOzCCBCOgAwIBAgIIUl87DJAKxOwwDQYJKoZIhvcNAQELBQAwRjEkMCIGA1UE
+AwwbTGxhbWEucGUgU0hBMjU2IFN0YW5kYXJkIENBMREwDwYDVQQKDAhMTEFNQS5Q
+RTELMAkGA1UEBhMCUEUwHhcNMjAwMTA0MTg0MzE1WhcNMjIwMTAzMTg0MzAwWjCC
+ARQxNDAyBgNVBAkMK0FWLiBTQU5UQSBST1NBIExULiAxOCBNWi4gRiBBLlYuIExB
+IEZMT1JJREExJjAkBgkqhkiG9w0BCQEWF2dpbm9idXN0aW9zQGhvdG1haWwuY29t
+MSUwIwYDVQQDDBxCVVNUSU9TIE1VTk9aIEdJTk8gR0lBTlBBT0xPMREwDwYDVQQF
+EwgwOTQ2MzczMzEUMBIGA1UECwwLMTAwOTQ2MzczMzkxITAfBgNVBAsMGFZhbGlk
+YXRlZCBieSBMbGFtYS5wZSBFUjElMCMGA1UECgwcQlVTVElPUyBNVU5PWiBHSU5P
+IEdJQU5QQU9MTzENMAsGA1UEBwwETElNQTELMAkGA1UEBhMCUEUwggEiMA0GCSqG
+SIb3DQEBAQUAA4IBDwAwggEKAoIBAQCn90E6d2pusm3F6c15m/+Nf0j06oDNfGjy
+9NZ99O72t10WskIBgsIjPd+OFqbh3KsKpsVP3i1LgxXfBUKo4BsSasTbJ00k77Wn
+H6nMYtKrV5XCsYniCm9tqVsPYRpFBxq4BaEVfwWQ4T6WiqfwHLSLZFo2P2JllsuX
+gCWhpEsbCqDsn1qf+UMBN2NpQY8R0893FKg3Y/pzzS03ObGeXe3E3KE5Rx1syCcV
+QiUDDiDn/Gx0gkrnjtcwy0aWOx5J6KzvcsDolM6vG2nLec2KwbbEcQj/CRTJxeth
+gGa6CeGtU7r3bS6V17cLvilUpRXBu/w/PRYC8pkSij8FBf/I2ECtAgMBAAGjggFb
+MIIBVzAMBgNVHRMBAf8EAjAAMB8GA1UdIwQYMBaAFF2IW63rZfv+aKLk2W89V3Ki
+7yuZMDAGCCsGAQUFBwEBBCQwIjAgBggrBgEFBQcwAYYUaHR0cDovL29jc3AubGxh
+bWEucGUwIgYDVR0RBBswGYEXZ2lub2J1c3Rpb3NAaG90bWFpbC5jb20wRgYDVR0g
+BD8wPTA7Bg0rBgEEAYOXdwABAAIBMCowKAYIKwYBBQUHAgEWHGh0dHBzOi8vbGxh
+bWEucGUvcmVwb3NpdG9yeS8wHQYDVR0lBBYwFAYIKwYBBQUHAwIGCCsGAQUFBwME
+MDoGA1UdHwQzMDEwL6AtoCuGKWh0dHA6Ly9jcmwubGxhbWEucGUvbGxhbWFwZXN0
+YW5kYXJkY2EuY3JsMB0GA1UdDgQWBBSCNyMo8njbNZ8mqIfzRB2Ma/lMczAOBgNV
+HQ8BAf8EBAMCBsAwDQYJKoZIhvcNAQELBQADggEBAIiS4Glp/1yoehBq3hZuwn2k
+UaUIAX4+HTuimdgpEzbJyQuH1qWFoDULB33ySiwEp62NwK/y1Hm7xCZQbyIJPetp
+r1GFcXM6irb0fbnDtFzCY3ltjwXgJmkB6n5NregciMAQFoCxKlktcG1/zf9Fs4Hd
+iresK/Mogeyq7PYWTIPWI3B5S60/mAjaj8YJ9IjJ1FEYmhvdiLMzo+2pEc1PkA9X
+ZLcAbA4o+0ytHLFPcltsDqSwIOk1051xU+X6+RDVhSD9FOtTUWyfKZkGmwEuSROQ
+loEvRc20KbIx5rNzk5V+PsTJFi9XAftm2v9Pt8yXkypNbp+s0Cr+6lzSfVyV+us=</ds:X509Certificate>
+<ds:X509SubjectName>C=PE,L=LIMA,O=BUSTIOS MUNOZ GINO GIANPAOLO,OU=Validated by Llama.pe ER,OU=10094637339,serialNumber=09463733,CN=BUSTIOS MUNOZ GINO GIANPAOLO,emailAddress=ginobustios@hotmail.com,street=AV. SANTA ROSA LT. 18 MZ. F A.V. LA FLORIDA</ds:X509SubjectName>
+</ds:X509Data>
+</ds:KeyInfo>
+            </ds:Signature>
+         </ext:ExtensionContent>
+      </ext:UBLExtension>
+   </ext:UBLExtensions>
+   <cbc:UBLVersionID>2.1</cbc:UBLVersionID>
+   <cbc:CustomizationID>2.0</cbc:CustomizationID>
+   <cbc:ID>FC01-0004</cbc:ID>
+   <cbc:IssueDate>2021-04-06</cbc:IssueDate>
+   <cbc:IssueTime>11:51:19</cbc:IssueTime>
+   <cbc:Note languageLocaleID="1000">DIECISIETE Y 35/100 SOLES</cbc:Note>
+   <cbc:DocumentCurrencyCode>PEN</cbc:DocumentCurrencyCode>
+   <cac:DiscrepancyResponse>
+      <cbc:ReferenceID>F002-0001</cbc:ReferenceID>
+      <cbc:ResponseCode>01</cbc:ResponseCode>
+      <cbc:Description>/</cbc:Description>
+   </cac:DiscrepancyResponse>
+   <cac:BillingReference>
+      <cac:InvoiceDocumentReference>
+         <cbc:ID>FC01-0004</cbc:ID>
+         <cbc:DocumentTypeCode>01</cbc:DocumentTypeCode>
+      </cac:InvoiceDocumentReference>
+   </cac:BillingReference>
+   <cac:Signature>
+      <cbc:ID>SFC01-0004</cbc:ID>
+      <cac:SignatoryParty>
+         <cac:PartyIdentification>
+            <cbc:ID>20525043844</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:PartyName>
+            <cbc:Name>+1 s.a.c</cbc:Name>
+         </cac:PartyName>
+      </cac:SignatoryParty>
+      <cac:DigitalSignatureAttachment>
+         <cac:ExternalReference>
+            <cbc:URI>#SFC01-0004</cbc:URI>
+         </cac:ExternalReference>
+      </cac:DigitalSignatureAttachment>
+   </cac:Signature>
+   <cac:AccountingSupplierParty>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeAgencyName="PE:SUNAT" schemeID="6" schemeName="SUNAT:Identificador de Documento de Identidad" schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo06">20525043844</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:PartyName>
+            <cbc:Name>+1 s.a.c</cbc:Name>
+         </cac:PartyName>
+         <cac:PartyLegalEntity>
+            <cbc:RegistrationName>+1 s.a.c</cbc:RegistrationName>
+            <cac:RegistrationAddress>
+               <cbc:AddressTypeCode>150136</cbc:AddressTypeCode>
+            </cac:RegistrationAddress>
+         </cac:PartyLegalEntity>
+      </cac:Party>
+   </cac:AccountingSupplierParty>
+   <cac:AccountingCustomerParty>
+      <cac:Party>
+         <cac:PartyIdentification>
+            <cbc:ID schemeAgencyName="PE:SUNAT" schemeID="6" schemeName="Documento de Identidad" schemeURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo06">20569045658</cbc:ID>
+         </cac:PartyIdentification>
+         <cac:PartyLegalEntity>
+            <cbc:RegistrationName>"romale e.i.r.l."</cbc:RegistrationName>
+         </cac:PartyLegalEntity>
+      </cac:Party>
+   </cac:AccountingCustomerParty>
+   <cac:TaxTotal>
+      <cbc:TaxAmount currencyID="PEN">2.65</cbc:TaxAmount>
+      <cac:TaxSubtotal>
+         <cbc:TaxableAmount currencyID="PEN">14.70</cbc:TaxableAmount>
+         <cbc:TaxAmount currencyID="PEN">2.65</cbc:TaxAmount>
+         <cbc:Percent>18.0</cbc:Percent>
+         <cac:TaxCategory>
+            <cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">S</cbc:ID>
+            <cac:TaxScheme>
+               <cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">1000</cbc:ID>
+               <cbc:Name>IGV</cbc:Name>
+               <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+            </cac:TaxScheme>
+         </cac:TaxCategory>
+      </cac:TaxSubtotal>
+   </cac:TaxTotal>
+   <cac:LegalMonetaryTotal>
+      <cbc:PayableAmount currencyID="PEN">17.35</cbc:PayableAmount>
+   </cac:LegalMonetaryTotal>
+   <cac:CreditNoteLine>
+      <cbc:ID>1</cbc:ID>
+      <cbc:CreditedQuantity unitCode="NIU" unitCodeListAgencyName="United Nations Economic Commission for Europe" unitCodeListID="UN/ECE rec 20">1.0</cbc:CreditedQuantity>
+      <cbc:LineExtensionAmount currencyID="PEN">14.70</cbc:LineExtensionAmount>
+      <cac:PricingReference>
+         <cac:AlternativeConditionPrice>
+            <cbc:PriceAmount currencyID="PEN">17.35</cbc:PriceAmount>
+            <cbc:PriceTypeCode listAgencyName="PE:SUNAT" listName="Tipo de Precio" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo16">01</cbc:PriceTypeCode>
+         </cac:AlternativeConditionPrice>
+      </cac:PricingReference>
+      <cac:TaxTotal>
+         <cbc:TaxAmount currencyID="PEN">2.65</cbc:TaxAmount>
+         <cac:TaxSubtotal>
+            <cbc:TaxableAmount currencyID="PEN">14.70</cbc:TaxableAmount>
+            <cbc:TaxAmount currencyID="PEN">2.65</cbc:TaxAmount>
+            <cac:TaxCategory>
+               <cbc:ID schemeAgencyID="6" schemeID="UN/ECE 5153">S</cbc:ID>
+               <cbc:Percent>18.0</cbc:Percent>
+               <cbc:TaxExemptionReasonCode listAgencyName="PE:SUNAT" listName="SUNAT:Codigo de Tipo de Afectación del IGV" listURI="urn:pe:gob:sunat:cpe:see:gem:catalogos:catalogo07">10</cbc:TaxExemptionReasonCode>
+               <cac:TaxScheme>
+                  <cbc:ID schemeAgencyName="United Nations Economic Commission for Europe" schemeID="UN/ECE 5153" schemeName="Tax Scheme Identifier">1000</cbc:ID>
+                  <cbc:Name>IGV</cbc:Name>
+                  <cbc:TaxTypeCode>VAT</cbc:TaxTypeCode>
+               </cac:TaxScheme>
+            </cac:TaxCategory>
+         </cac:TaxSubtotal>
+      </cac:TaxTotal>
+      <cac:Item>
+         <cbc:Description>Hamburguesa Premium</cbc:Description>
+         <cac:SellersItemIdentification>
+            <cbc:ID>4</cbc:ID>
+         </cac:SellersItemIdentification>
+         <cac:CommodityClassification>
+            <cbc:ItemClassificationCode>None</cbc:ItemClassificationCode>
+         </cac:CommodityClassification>
+      </cac:Item>
+      <cac:Price>
+         <cbc:PriceAmount currencyID="PEN">14.70</cbc:PriceAmount>
+      </cac:Price>
+   </cac:CreditNoteLine>
+</CreditNote>

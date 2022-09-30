@@ -1,0 +1,6 @@
+ <odoo>
+  <data>
+        <menuitem id="menu_Payment_terms_pos" name="Términos Créditicios" parent="point_of_sale.menu_point_root" sequence="99" groups="point_of_sale.group_pos_user" action="action_Payment_terms"/>
+        <menuitem id="menu_Payment_terms_account" name="Términos Créditicios" parent="account.menu_finance_configuration" sequence="99" groups="account.group_account_manager" action="action_Payment_terms"/>
+   </data>
+</odoo>

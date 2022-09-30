@@ -1,0 +1,1 @@
+<?xml version='1.0' encoding='UTF-8'?><S:Envelope xmlns:S="http://schemas.xmlsoap.org/soap/envelope/"><S:Body><ns0:getStatusCdrResponse xmlns:ns0="http://service.sunat.gob.pe"><statusCdr><statusCode>0006</statusCode><statusMessage>Formato de serie inválido (debe de contener 4 caracteres).</statusMessage></statusCdr></ns0:getStatusCdrResponse></S:Body></S:Envelope>

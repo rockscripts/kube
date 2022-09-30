@@ -1,0 +1,12 @@
+<?xml version="1.0"?>
+<odoo>
+    <data> 
+        <template id="report_assets_common_custom_style" name="Custom QWeb Style" inherit_id="web.report_assets_common">
+            <xpath expr="." position="inside">
+                <link href="/edocs_print_format/static/src/css/invoice_template_pdf.css" rel="stylesheet"/>
+                <link href="/edocs_print_format/static/src/css/invoice_template.css" rel="stylesheet"/>
+                <script src="/edocs_print_format/static/src/js/invoice.js" rel="stylesheet"/>
+            </xpath>
+        </template>
+    </data>
+</odoo>

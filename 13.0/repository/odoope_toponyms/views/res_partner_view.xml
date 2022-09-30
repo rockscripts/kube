@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<openerp>
+	<data>	
+		<record model='ir.ui.view' id='toponyms_view_partner_inherit'>
+			<field name='name'>toponyms.res.partner.inherit</field>
+			<field name='model'>res.partner</field>
+			<field name='inherit_id' ref='base.view_partner_form'/>
+			<field name='type'>form</field>
+            <field name="priority">1000</field>
+			<field name='arch' type='xml'>
+                 <xpath expr="//div[@class='o_address_format']" position="replace">
+                    <div class='o_address_format'>
+                    <field name="street_name" placeholder="Dirección" class="o_address_street" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                    <field name="country_id" placeholder="País" class="o_address_city" options="{&quot;no_open&quot;: True, &quot;no_create&quot;: True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/> 
+                    <field name="state_id" class="o_address_city" placeholder="Departamento" options="{&quot;no_open&quot;: True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"  domain="[('country_id', '=', country_id),('state_id', '=', False),('province_id', '=', False)]"/>
+                    <field name="province_id" class="o_address_city" placeholder="Provincia" options="{&quot;no_open&quot;: True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" domain="[('country_id', '=', country_id),('state_id', '=', state_id),('province_id', '=', False)]"/>
+                    <field name="district_id" class="o_address_city" placeholder="Distrito" options="{&quot;no_open&quot;: True}" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}" domain="[('country_id', '=', country_id),('state_id', '=', state_id),('province_id', '=', province_id)]"/>
+                    <field name="zip" placeholder="Código postal" attrs="{'readonly': [('type', '=', 'contact'),('parent_id', '!=', False)]}"/>
+                    <field name="city" placeholder="Otra referencia"  invisible='1'/>
+                    <field name="street" placeholder="Otra referencia" invisible='1'/>
+                    <field name="street2" placeholder="Otra referencia"  invisible='1'/>
+                    </div>
+                </xpath>                 
+			</field>
+		</record>
+	</data>
+</openerp>

@@ -1,0 +1,4 @@
+id,name,model_id:id,group_id:id,perm_read,perm_write,perm_create,perm_unlink
+sunat_catalog,sunat.catalog,model_sunat_catalog,,1,1,1,1
+sunat_catalog,sunat.catalog,model_sunat_catalog,,1,1,1,1
+multi_cajero,group.account.manager,base.model_ir_config_parameter,account.group_account_manager,1,1,1,1

@@ -1,0 +1,144 @@
+<openerp>
+    <data>        
+        <record id="catalog59_1" model="sunat.catalog">
+            <field name="name">DEPÓSITO EN CUENTA</field>
+            <field name="state">True</field>
+            <field name="code">001</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">001</field>
+        </record>
+        <record id="catalog59_2" model="sunat.catalog">
+            <field name="name">GIRO</field>
+            <field name="state">True</field>
+            <field name="code">002</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">001</field>
+        </record>
+        <record id="catalog59_3" model="sunat.catalog">
+            <field name="name">ORDEN DE PAGO</field>
+            <field name="state">True</field>
+            <field name="code">004</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">001</field>
+        </record>
+        <record id="catalog59_4" model="sunat.catalog">
+            <field name="name">TARJETA DE DÉBITO</field>
+            <field name="state">True</field>
+            <field name="code">005</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">001</field>
+        </record>
+        <record id="catalog59_5" model="sunat.catalog">
+            <field name="name">TARJETA DE CRÉDITO EMITIDA EN EL PAÍS POR UNA EMPRESA DEL SISTEMA FINANCIERO</field>
+            <field name="state">True</field>
+            <field name="code">006</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">001</field>
+        </record>
+        <record id="catalog59_6" model="sunat.catalog">
+            <field name="name">EFECTIVO, POR OPERACIONES EN LAS QUE NO EXISTE OBLIGACIÓN DE UTILIZAR MEDIO DE PAGO</field>
+            <field name="state">True</field>
+            <field name="code">008</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">001</field>
+        </record>
+        <record id="catalog59_7" model="sunat.catalog">
+            <field name="name">EFECTIVO, EN LOS DEMÁS CASOS</field>
+            <field name="state">True</field>
+            <field name="code">009</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">001</field>
+        </record>
+        <record id="catalog59_8" model="sunat.catalog">
+            <field name="name">MEDIOS DE PAGO USADOS EN COMERCIO EXTERIOR</field>
+            <field name="state">True</field>
+            <field name="code">010</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">001</field>
+        </record>
+        <record id="catalog59_9" model="sunat.catalog">
+            <field name="name">DOCUMENTOS EMITIDOS POR LAS EDPYMES Y LAS COOPERATIVAS DE AHORRO Y CRÉDITO NO AUTORIZADAS A CAPTAR DEPÓSITOS DEL PÚBLICO</field>
+            <field name="state">True</field>
+            <field name="code">011</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">001</field>
+        </record>
+        <record id="catalog59_10" model="sunat.catalog">
+            <field name="name">TARJETA DE CRÉDITO EMITIDA EN EL PAÍS O EN EL EXTERIOR POR UNA EMPRESA NO PERTENECIENTE AL SISTEMA FINANCIERO, CUYO OBJETO PRINCIPAL SEA LA EMISIÓN Y ADMINISTRACIÓN DE TARJETAS DE CRÉDITO</field>
+            <field name="state">True</field>
+            <field name="code">012</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">001</field>
+        </record>
+        <record id="catalog59_11" model="sunat.catalog">
+            <field name="name">TARJETAS DE CRÉDITO EMITIDAS EN EL EXTERIOR POR EMPRESAS BANCARIAS O FINANCIERAS NO DOMICILIADAS</field>
+            <field name="state">True</field>
+            <field name="code">013</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">001</field>
+        </record>
+        <record id="catalog59_12" model="sunat.catalog">
+            <field name="name">TRANSFERENCIAS - COMERCIO EXTERIOR</field>
+            <field name="state">True</field>
+            <field name="code">101</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">101</field>
+        </record>
+        <record id="catalog59_13" model="sunat.catalog">
+            <field name="name">CHEQUES BANCARIOS - COMERCIO EXTERIOR</field>
+            <field name="state">True</field>
+            <field name="code">102</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">102</field>
+        </record>
+        <record id="catalog59_14" model="sunat.catalog">
+            <field name="name">ORDEN DE PAGO SIMPLE - COMERCIO EXTERIOR</field>
+            <field name="state">True</field>
+            <field name="code">103</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">102</field>
+        </record>
+        <record id="catalog59_15" model="sunat.catalog">
+            <field name="name">ORDEN DE PAGO DOCUMENTARIO - COMERCIO EXTERIOR</field>
+            <field name="state">True</field>
+            <field name="code">104</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">104</field>
+        </record>
+        <record id="catalog59_16" model="sunat.catalog">
+            <field name="name">REMESA SIMPLE - COMERCIO EXTERIOR</field>
+            <field name="state">True</field>
+            <field name="code">105</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">105</field>
+        </record>
+        <record id="catalog59_17" model="sunat.catalog">
+            <field name="name">REMESA DOCUMENTARIA - COMERCIO EXTERIOR</field>
+            <field name="state">True</field>
+            <field name="code">106</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">106</field>
+        </record>
+        <record id="catalog59_18" model="sunat.catalog">
+            <field name="name">CARTA DE CRÉDITO SIMPLE - COMERCIO EXTERIOR</field>
+            <field name="state">True</field>
+            <field name="code">107</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">107</field>
+        </record>
+        <record id="catalog59_19" model="sunat.catalog">
+            <field name="name">CARTA DE CRÉDITO DOCUMENTARIO - COMERCIO EXTERIOR</field>
+            <field name="state">True</field>
+            <field name="code">108</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">108</field>
+        </record>
+        <record id="catalog59_20" model="sunat.catalog">
+            <field name="name">OTROS MEDIOS DE PAGO</field>
+            <field name="state">True</field>
+            <field name="code">999</field>
+            <field name="table_code">CATALOG59</field>
+            <field name="un_ece_code">999</field>
+        </record>
+    </data>
+</openerp>

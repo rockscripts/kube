@@ -1,0 +1,16 @@
+<odoo>
+    <record model="ir.ui.view" id="view_account_journal_form_for_sunat">
+        <field name="name">account.journal.form.sunat</field>
+        <field name="model">account.journal</field>
+        <field name="inherit_id" ref="account.view_account_journal_form"/>
+        <field name="arch" type="xml">
+          <xpath expr="//page[last()]" position="after">
+            <page string="Sunat" name="sunat_journal">      
+              <group>
+                <field name="is_electronic_invoice" />
+              </group>
+            </page>
+          </xpath>
+        </field>
+    </record>
+</odoo>

@@ -1,0 +1,28 @@
+.goverment_identification
+{
+    border-top: 1px dashed #ccc;
+    border-bottom: 1px dashed #ccc;
+}
+.top-id
+{
+    max-width: 362px;
+        margin-left: 86px;
+        margin-bottom: 11px;
+}
+.top-id select[name='sunat_tipo_documento']
+{
+    max-width: 149px;
+}
+.top-id  input[name='vat']
+{
+    max-width: 188px;
+}
+.electronic-invoice
+{
+    border-top: 1px dashed #ddd;
+    border-bottom: 1px dashed #ddd;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    margin-top: 5px;
+    margin-bottom: 5px;
+}

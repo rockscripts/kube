@@ -1,0 +1,48 @@
+<templates>
+    <t t-extend="ClientDetailsEdit">
+        <t t-jquery=".vat" t-operation="replace"/> 
+         <t t-jquery=".client-details-left .client-detail:eq(1)" t-operation="replace"/> 
+         
+        <t t-jquery="input[name='name']" t-operation="after">  
+            <div class="top-id">
+                <select name="sunat_tipo_documento" id="sunat_tipo_documento" class="detail sunat_tipo_documento pos_sunat_tipo_documento">
+                    <option t-att-value="1">DNI</option>
+                    <option t-att-value="6">RUC</option>
+                    <option t-att-value="7">Pasaporte</option>
+                    <option t-att-value="4">Carnet de extranjería</option>
+                </select>
+                <input class='detail vat' name='vat' t-att-value='partner.vat || ""'/>
+                <input type='hidden' class='detail partner_id' name='id' t-att-value='partner.id || ""'/>
+            </div>
+            
+        </t>
+
+        <t t-jquery=".client-details-left .client-detail:eq(2)" t-operation="after">           
+            
+            <div class="client-detail">
+                <span class="label">Provincia</span>
+                <select name="province_id" class="detail client-address-province_id"></select>
+            </div>
+
+            <div class="client-detail">
+                <span class="label">Distrícto</span>
+                <select name="district_id" class="detail client-address-district_id"></select>
+                <input type="hidden" class='detail client-address-district_id pos-ubigeo' name='ubigeo' t-att-value='partner.ubigeo || ""'></input>
+            </div>    
+
+        </t>
+
+        <t t-jquery=".client-details-left .client-detail select[name='state_id']" t-operation="replace"> 
+            <select name="state_id" class="detail client-address-state_id"></select>
+        </t>
+        
+    </t>
+
+    <t t-extend="Chrome">
+
+        <t t-jquery=".pos-logo" t-operation="replace">
+            <img class="pos-logo" src="/sunat_fact/static/src/images/logo.png" />
+        </t>
+
+    </t>
+</templates>

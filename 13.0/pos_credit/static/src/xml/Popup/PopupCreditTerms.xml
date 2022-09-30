@@ -1,0 +1,106 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+
+    <t t-name="CreditTermsPosPopup">
+        <div class="modal-dialog">
+            <div class="popup popup-textinput credit_terms_pos_popup">
+                <p class="title title_in_out"><t t-esc="widget.options.title" /></p>
+                <div class='container'>
+                    <table>
+
+                        <tr>
+                            <td>
+                                <label for="fixed_period" class="form-label">¿Cuota fija?</label>
+                            </td>
+                            <td>
+                                <input type="checkbox"  id="fixed_period"/> 
+                            </td>
+                        </tr>                        
+                        <tr>
+                            <td>
+                                <label  for="payment_terms_cuotes" class="form-label">Cuotas</label>
+                            </td>
+                            <td>
+                                <select id="payment_terms_cuotes"></select>
+                            </td>
+                        </tr>   
+                        <tr>
+                            <td>
+                                <label  for="payment_terms_period" class="form-label">Términos del pago</label>
+                            </td>
+                            <td>
+                                <select id="payment_terms_period"></select>
+                            </td>
+                        </tr>
+                        <tr class="custom-hidden">
+                            <td>
+                                <label for="credit_percent_charge" class="form-label">Cargo (%)</label>
+                            </td>
+                            <td>
+                                <input type="number" placeholder="por fiado" id="credit_percent_charge" size="4"/>
+                                <input type="number" placeholder="0" id="credit_charge_amount" size="4" min="0.00" step="0.01" value="0" readonly="1"/>
+                            </td>
+                        </tr>
+                        <tr id="dinamic_terms">
+                            <td colspan="2">
+                                <hr class="hr_soft"/>
+                                <h5>Términos dinámicos</h5>
+                                <div class="buttons_dinamic_terms">
+                                    <div class="btn btn-default add_dinamic_terms">
+                                        <i class="fa fa-plus-circle"/>
+                                    </div>
+                                </div>
+                                <div class="container_dinamic_terms">
+                                    <div class="row no_rows">Sin registro</div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr class="tr_credit_total_amount_left">
+                            <td colspan="2" class="td_credit_total_amount_left">
+                                <center>
+                                    <small>Por completar: </small><small class="credit_total_amount_left">$ 0.00</small>
+                                </center>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2">
+                               <hr />
+                            </td>
+                        </tr>
+                        <tr>
+                            <td colspan="2" class="td_credit_total_amount">
+                                <div  class="custom-hidden"><input type="number" min="0.00" step="0.01" placeholder="Monto Inicial" id="credit_initial_total_amount"/></div>
+                                <div id="credit_total_amount" title="Monto Total">
+                                    <small>Monto Total</small>
+                                    <b class="credit_total_amount">$ 0.00</b>
+                                </div>  
+                            </td>
+                        </tr>
+
+                    </table>
+                    <div class="html_term">
+                        <div class="row row_custom_term">
+                            <input type="text" name="custom_term_reazon" placeholder="Concepto" class="custom_term_reazon" />
+                            <input type="text" name="custom_term_amount" placeholder="Monto" class="custom_term_amount" value="0"/>
+                            <input type="text" name="custom_term_date" class="o_website_form_date datetimepicker-input custom_term_date" data-date-format="YYYY-MM-DD" t-att-name="prefix" placeholder="YYYY-MM-DD"/>                            
+                            <div class="btn btn-danger remove_custom_term">
+                                <i class="fa fa-minus-circle"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="footer">
+                    <div class="button confirm">
+                        Asignar
+                    </div>
+                    <div class="button cancel">
+                        Cancelar
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+    
+
+</templates>

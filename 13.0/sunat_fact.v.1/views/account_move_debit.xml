@@ -1,0 +1,29 @@
+<odoo>
+    <data>
+        
+        <record id="view_account_debit_note_inherit" model="ir.ui.view">
+            <field name="name">account.debit.note.form</field>
+            <field name="model">account.debit.note</field>
+            <field name="inherit_id" ref="account_debit_note.view_account_debit_note" />
+            <field name="arch" type="xml">
+                <xpath expr="/form/group/group/field[@name='reason']" position="after">
+                    <field name="sunat_note" string="Nota" readonly='1'/>
+                </xpath>
+                <xpath expr="/form/group/group/field[@name='reason']" position="after">
+                    <field name="debit_discrepance" string="Discrepancia"  attrs="{'invisible':[('sunat_note','=','07')]}"/>
+                </xpath>
+                 <xpath expr="/form/group/group/field[@name='reason']" position="replace">
+                     <field name="reason"  invisible='1'/>
+                </xpath>
+                <xpath expr="/form/footer" position="replace">
+                    <footer>
+                        <button string='+ Nota Débito' name="create_debit" type="object" class="btn-primary"/>
+                        <button string="Cancelar" class="btn-secondary" special="cancel"/>
+                    </footer>
+                </xpath>
+            </field>
+        </record>
+
+        
+    </data>
+</odoo>

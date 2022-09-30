@@ -1,0 +1,74 @@
+<odoo>
+    <!-- tree view -->
+    <record id="pos_payment_buttons_tree" model="ir.ui.view">
+        <field name="name">Catalogo Sunat Tree</field>
+        <field name="model">sunat.catalog</field>
+        <field name="type">tree</field>        
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <tree >
+                <field name="name" />
+                <field name="company_id" />
+                <field name="code"/>
+                <field name="un_ece_code"/>
+                <field name="table_code"/>
+                <field name="description"/>
+                <field name="description"/>
+                <field name="value"/>
+                <field name="un_ece_code_5305"/>
+            </tree>
+        </field>
+    </record>
+    <!-- form view -->
+    <record id="pos_payment_buttons_form" model="ir.ui.view">
+        <field name="name">Catalogo Sunat Form</field>
+        <field name="model">sunat.catalog</field>        
+        <field name="priority" eval="8"/>
+        <field name="arch" type="xml">
+            <form string="Credit Payment Orders Terms">
+                <header>
+                </header>
+                <sheet>
+                    <div class="oe_button_box" name="button_box">
+                        <!--button type="object" name="action_view_detail" class="oe_stat_button" icon="fa-pencil-square-o"-->
+                            <!--field name="detail_count" widget="statinfo" string="Detail(s)"/-->
+                            <!--field name="detail_ids" invisible="1"/-->
+                        <!--/button-->
+                    </div>
+                    <div class="oe_title">
+                        <label for="name" class="oe_edit_only" string="Nombre"/>
+                        <h1><field name="name"/></h1>
+                    </div>
+                    <group>
+                        <field name="company_id" />
+                        <field name="code"/>
+                        <field name="un_ece_code"/>
+                        <field name="table_code"/>
+                        <field name="description"/>
+                        <field name="description"/>
+                        <field name="value"/>
+                        <field name="un_ece_code_5305"/>
+                    </group>
+                </sheet>
+            </form>
+        </field>
+    </record>
+    <!-- action window -->
+    <record id="action_catalog_sunat" model="ir.actions.act_window">
+        <field name="name">Catalogo Sunat</field>
+        <field name="type">ir.actions.act_window</field>
+        <field name="res_model">sunat.catalog</field>
+        <field name="view_mode">tree,kanban,form</field>
+        <!--
+        <field name="domain">[("is_autor","=",True)]</field>
+        <field name="context">{"search_default_is_autor":True}</field>
+        -->
+        <field name="help" type="html">
+            <p class="oe_view_nocontent_create">
+            Click to add a new Catalogo Sunat
+            </p><p>
+            Click the Create button to add a new Catalogo Sunat
+            </p>
+        </field>
+    </record>  
+</odoo>

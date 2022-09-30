@@ -1,0 +1,27 @@
+<odoo>
+  <data>
+        <record model="ir.ui.view" id="pos_config_credit_payment_terms">
+            <field name="name">credit.payment.terms.credit.form.view.inherit</field>
+            <field name="model">pos.config</field>
+            <field name="inherit_id" ref="point_of_sale.pos_config_view_form"/>
+            <field name="arch" type="xml">
+                <xpath expr="//div[hasclass('o_settings_container')]" position="after">
+                    <h2>Pedidos Fiados / Crédito</h2>
+                    <div class="row mt16 o_settings_container" name="payment_terms_credit">
+                        <div class="col-12 col-lg-6 o_setting_box" id="iface_credit_payment_terms">     
+                        <div class="o_setting_left_pane">
+                            <field name="payment_terms_cuotes_range"/>
+                        </div>
+                        <div class="o_setting_right_pane">
+                            <label for="payment_terms_cuotes_range"/>
+                            <div class="text-muted">
+                                Máx. Rango de cuotas
+                            </div>
+                        </div>
+                        </div>
+                    </div>
+                </xpath>
+            </field>
+        </record>
+  </data>
+</odoo>

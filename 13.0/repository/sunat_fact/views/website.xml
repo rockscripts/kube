@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="utf-8"?>
+<odoo>
+
+    <data>
+
+        <template id="address_b2b" inherit_id="website_sale.address">
+            <xpath expr="//label[@for='vat']" position="after">
+                <t>                  
+                    <select  name="sunat_tipo_documento" id="sunat_tipo_documento" t-attf-class="form-control #{error.get('sunat_tipo_documento') and 'is-invalid' or ''}" t-att-readonly="'1' if 'vat' in checkout and checkout['vat'] and not can_edit_vat else None">
+                        <option t-att-value="1"  t-att-selected="'sunat_tipo_documento' in checkout and checkout['sunat_tipo_documento'] == '1'">DNI</option>
+                        <option t-att-value="6"  t-att-selected="'sunat_tipo_documento' in checkout and checkout['sunat_tipo_documento'] == '6'">RUC</option>
+                        <option t-att-value="7"  t-att-selected="'sunat_tipo_documento' in checkout and checkout['sunat_tipo_documento'] == '7'">Pasaporte</option>
+                        <option t-att-value="4"  t-att-selected="'sunat_tipo_documento' in checkout and checkout['sunat_tipo_documento'] == '4'">Carnet de extranjería</option>
+                    </select>
+                
+                </t>
+            </xpath>
+            <xpath expr="//form[@class='checkout_autoformat']/div[@class='form-row']/div[12]" position="after">
+                <t> 
+                    <div class="div_district form-group  col-lg-6">
+                        <label class="col-form-label" for="district_id">Distrícto</label>                 
+                        <select name="district_id" data-init="1" class="form-control "  t-att-value="'district_id' in checkout and checkout['district_id'].id">
+                        </select>     
+                    </div>     
+                    <div class="div_zip_ubigeo form-group  col-lg-6">
+                        <label class="col-form-label" for="ubigeo">C. Postal</label>                 
+                         <input type="text" name="ubigeo" id="ubigeo"  t-attf-class="form-control #{error.get('ubigeo') and 'is-invalid' or ''}" t-att-value="'ubigeo' in checkout and checkout['ubigeo']"/>                                
+                         <input type="hidden" name="x_state_id" id="x_state_id" t-att-value="'state_id' in checkout and checkout['state_id'].id"/>   
+                         <input type="hidden" name="x_province_id" id="x_province_id" t-att-value="'province_id' in checkout and checkout['province_id'].id"/>  
+                         <input type="hidden" name="x_district_id" id="x_district_id" t-att-value="'district_id' in checkout and checkout['district_id'].id"/>  
+                         <t t-if="partner">
+                            <input type="hidden" name="x_partner_id" id="x_partner_id" t-att-value="partner['partner_id']"/>  
+                         </t>
+                    </div> 
+                         
+                </t>
+            </xpath>
+            
+            <xpath expr="//form[@class='checkout_autoformat']/div[@class='form-row']/div[12]" position="after">
+                <t> 
+                    <div class="form-group  col-lg-6 div_province">
+                        <label class="col-form-label" for="province_id">Provincia</label>          
+                            <select name="province_id" data-init="1" class="form-control " t-att-value="'province_id' in checkout and checkout['province_id'].id">
+                        </select>    
+                    </div>          
+                </t>
+            </xpath> 
+
+            <xpath expr="//label[@for='state_id']" position="replace">
+                <t> 
+                <label class="col-form-label" for="state_id">Departamento</label>    
+                </t>
+            </xpath>
+
+            <xpath expr="//input[@name='field_required']" position="replace">
+                <t>
+                <input type="hidden" name="field_required" t-att-value="'phone,name,sunat_tipo_documento,zip,ubigeo'" />
+                </t>
+            </xpath>
+            
+    </template>
+
+    </data>
+
+</odoo>

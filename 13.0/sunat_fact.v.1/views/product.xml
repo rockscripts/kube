@@ -1,0 +1,49 @@
+<odoo>
+    <data>
+         <record id="sunat_product_tpl_form" model="ir.ui.view">
+            <field name="name">product.template.purchase.button.inherit</field>
+            <field name="model">product.template</field>
+            <field name="inherit_id" ref="product.product_template_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//notebook[last()]" position="inside">
+                    <page string="Sunat e-Fact" name='e_fact'>
+                        <table>
+                            <tr>
+                                <td>
+                                    <label for="sunat_price_type"/>
+                                    <field name="sunat_price_type" string='Tipo precio'/>
+                                </td>
+                                <td></td>
+                            </tr>
+                            <tr>
+                                <td>
+                                    <label for="sunat_product_code"/>
+                                    <field name="sunat_product_code" string='Código Producto' id="sunat_product_code" class="ItemClassificationCode"/>
+                                </td>
+                                <td>
+                                    <i class="selector_sunat_product_code fa fa-external-link btn btn-secondary "></i>
+                                </td>
+                            </tr>
+                        </table>
+                    </page>
+                </xpath>
+                <xpath expr="//field[@name='list_price']" position="before">
+                    <field name="sunat_price_type" string='Sunat tipo precio'/>
+                </xpath>
+            </field>
+        </record>
+
+        <record id="product_uom_form_view_inherit" model="ir.ui.view">
+            <field name="name">uom.product_uom_form_view_inherit</field>
+            <field name="model">uom.uom</field>
+            <field name="inherit_id" ref="uom.product_uom_form_view"/>
+            <field name="arch" type="xml">
+                <xpath expr="//group[last()]" position="inside">
+                    <group col="0">
+                        <field name="sunat_unit_code"/>
+                    </group>
+                </xpath>
+            </field>
+        </record>
+    </data>
+</odoo>

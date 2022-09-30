@@ -1,0 +1,12 @@
+<openerp>
+    <data>        
+        <record id="credit_payment_terms_security" model="ir.model.access">
+            <field name="name">credit_payment_terms_security</field>            
+            <field name="model_id/id">pos_credit.model_payment_terms</field>
+            <field name="perm_write">True</field>
+            <field name="perm_unlink">True</field>
+            <field name="perm_read">True</field>
+            <field name="perm_create">True</field>
+        </record>
+    </data>
+</openerp>

@@ -1,0 +1,170 @@
+div.credit_terms_pos_popup input[type='checkbox'], #credit_percent_charge, #credit_total_amount, #fixed_period
+{ 
+    max-width: 23px;
+    display: table;
+}
+
+div.credit_terms_pos_popup select, #credit_percent_charge, #credit_charge_amount
+{
+    border-radius: 10px;
+    display: table;
+    padding: 6px;
+    font-size: 14px;
+    max-width: 236px;
+}
+
+#credit_percent_charge, #credit_charge_amount
+{
+    max-width: 84px;
+    float: left;
+}
+
+#credit_charge_amount
+{
+    margin-left: 10px;
+}
+
+div.credit_terms_pos_popup div.col-md-6 
+{
+    padding-bottom: 13px;
+}
+
+div.credit_terms_pos_popup table
+{
+    width: 100%;
+}
+
+div.credit_terms_pos_popup table td
+{
+    padding-bottom: 5px;
+}
+
+input#date_delivered
+{
+    max-width: 127px;
+    text-align: center;
+    display: table;
+}
+
+div.credit_terms_pos_popup #credit_total_amount
+{
+    min-width: 200px;
+    margin-bottom: 65px;
+    display: inline-block;
+}
+
+div.credit_terms_pos_popup
+{
+    height: fit-content!important;
+    display: inline!important;
+}
+
+div#credit_total_amount
+{
+    width: 100%;
+    display: contents;
+    margin-top: 10px;
+}
+
+input#credit_initial_total_amount
+{
+    max-width: 180px;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.buttons_dinamic_terms
+{
+    padding: 10px;
+}
+
+.buttons_dinamic_terms .btn
+{
+    width: 28px;
+    font-size: 25px;
+    margin: auto;
+    border: 0px;
+    background: #ccc;
+    cursor: pointer;
+    border-radius: 10px!important;
+}
+.html_term
+{
+    display: none;
+}
+
+.container_dinamic_terms .row
+.container_dinamic_terms .row
+{
+    display: table;
+}
+
+.container_dinamic_terms .row input, 
+.container_dinamic_terms .row .btn
+{
+    display: table-cell;
+}
+.container_dinamic_terms .row input.custom_term_reazon
+{
+    max-width: 35%;
+}
+.container_dinamic_terms .row input.custom_term_amount
+{
+    max-width: 25%;
+}
+.container_dinamic_terms .row input.custom_term_date
+{
+    max-width: 20%;
+}
+.container_dinamic_terms .row .btn
+{
+    max-width: 20%;
+    display: inline!important;
+    font-size: 25px;
+}
+.container_dinamic_terms .row_custom_term
+{
+    margin-bottom: 5px;
+}
+.remove_custom_term
+{
+    cursor: pointer;
+}
+.hr_soft
+{
+    color: #ccc;
+}
+#dinamic_terms
+{
+    display: none;
+}
+b.credit_total_amount
+{
+
+}
+td.td_credit_total_amount
+{
+    padding-bottom: 73px;
+}
+.credit_charge_amount
+{
+    font-size: 11px;
+}
+.credit_total_amount_left
+{
+    
+}
+.highlight_text
+{
+    color: blueviolet;
+}
+
+.custom-hidden
+{
+    display: none!important;
+}
+
+tr.tr_credit_total_amount_left
+{
+    display: none;
+}

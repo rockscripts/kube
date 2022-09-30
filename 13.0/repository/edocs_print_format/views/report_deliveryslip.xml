@@ -1,0 +1,255 @@
+<?xml version="1.0"?>
+<odoo>
+    <data>
+        <template id="report_delivery_document_inherit" inherit_id="stock.report_delivery_document">
+            <xpath expr="//div[@class='page']" position="replace">
+                <link href="/edocs_print_format/static/src/css/report_delivery.css" rel="stylesheet"/>
+                <div class="guide-block guide-header"> 
+                    <div class="gui-table">
+                            <div class="gui-table-row">
+                                <div class="gui-table-cell">
+                                    <h3><span t-field="o.picking_type_id.sequence_id.name"/></h3>
+                                    <h3 class="guide-sequence"><span t-field="o.name"/></h3>
+                                </div>
+                                <div class="gui-table-cell">
+                                    <div class="qr-container">
+                                        <span t-field="o.qr_image" t-options='{"widget": "image"}'/>
+                                    </div>
+                                </div>
+                            </div>
+                    </div>
+                </div>
+                <div class="guide-block">                     
+                    <h3 class="guide-block-title">Inicio de traslado</h3>
+                    <div class="gui-table">
+                        <div class="gui-table-row">
+                            <div class="gui-table-cell">
+                                <label>Documento Origen</label>
+                            </div>
+                            <div class="gui-table-cell">
+                                <span t-field="o.origin"/>
+                            </div>
+                        </div>
+                        <div class="gui-table-row">
+                            <div class="gui-table-cell">
+                                <label>Fecha de Emisión</label>
+                            </div>
+                            <div class="gui-table-cell">
+                                <span t-field="o.date_done"/>
+                            </div>
+                        </div>
+                        <div class="gui-table-row">
+                            <div class="gui-table-cell">
+                                <label>Fecha de entrega de bienes al transportista</label>
+                            </div>
+                            <div class="gui-table-cell">
+                                <span t-field="o.scheduled_date"/>
+                            </div>
+                        </div>
+                        <div class="gui-table-row">
+                            <div class="gui-table-cell">
+                                <label>Motivo de traslado</label>
+                            </div>
+                            <div class="gui-table-cell">
+                                <span t-field="o.picking_type_id.name"/>
+                            </div>
+                        </div>
+                        <div class="gui-table-row">
+                            <div class="gui-table-cell">
+                                <label>Peso del envío</label>
+                            </div>
+                            <div class="gui-table-cell">
+                                <span t-field="o.shipping_weight"/>
+                                <span t-if="'weight_uom_id' in o" t-field="o.weight_uom_id"/>
+                            </div>
+                        </div>
+                        <div class="gui-table-row">
+                            <div class="gui-table-cell">
+                                <label>Referencia de seguimiento</label>
+                            </div>
+                            <div class="gui-table-cell">
+                                <span t-field="o.carrier_tracking_ref"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-block">
+                    <h3 class="guide-block-title">Destinatario</h3>
+                    <div class="gui-table">
+                        <div class="gui-table-row">
+                            <div class="gui-table-cell">
+                                <label>Apellidos y nombres, denominación o razón</label>
+                            </div>
+                            <div class="gui-table-cell">
+                                <span t-field="o.partner_id.name"/>
+                            </div>
+                        </div>
+                        <div class="gui-table-row">
+                            <div class="gui-table-cell">
+                                <label>Identificación</label>
+                            </div>
+                            <div class="gui-table-cell">
+                                <span t-field="o.partner_id.vat"/>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-block">
+                    <h3 class="guide-block-title">Transportista</h3>
+                    <div class="gui-table">
+                        <table class="table table-sm mt48">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <strong>Razón Social</strong>
+                                    </th>
+                                    <th>
+                                        <strong>RUC</strong>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>
+                                        <span t-field="o.carrier_id.name"/>
+                                    </td>
+                                    <td>
+                                        <span t-field="o.carrier_id.ruc"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+
+                <div class="guide-block">
+                    <h3 class="guide-block-title">Direcciones de punto de partida y llegada</h3>
+                    <div class="gui-table">
+                        <div class="gui-table-row">
+                            <div class="gui-table-cell">
+                                <label>Partida</label>
+                            </div>
+                            <div class="gui-table-cell">
+                                <div>
+                                    <span t-field="o.picking_type_id.warehouse_id.partner_id.street"/>
+                                </div>
+                                <div>
+                                    <span t-field="o.picking_type_id.warehouse_id.partner_id.city"/>
+                                </div>
+                                <div>
+                                    <span t-field="o.picking_type_id.warehouse_id.partner_id.zip"/>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="gui-table-row">
+                            <div class="gui-table-cell">
+                                <label>Llegada</label>
+                            </div>
+                            <div class="gui-table-cell">
+                                <div>
+                                    <span t-field="o.partner_id.street"/>
+                                </div>
+                                <div>
+                                    <span t-field="o.partner_id.city"/>
+                                </div>
+                                <div>
+                                    <span t-field="o.partner_id.zip"/>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+
+                <div class="guide-block">
+                    <h3 class="guide-block-title">Productos / Servicios</h3>
+                    <div class="gui-table">
+                        <table class="table table-sm mt48" t-if="o.state!='done'">
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <strong>Product</strong>
+                                    </th>
+                                    <th>
+                                        <strong>Quantity</strong>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <t t-set="lines" t-value="o.move_lines.filtered(lambda x: x.product_uom_qty)"/>
+                                <tr t-foreach="lines" t-as="move">
+                                    <td>
+                                        <span t-field="move.product_id"/>
+                                        <p t-if="o.picking_type_code == 'outgoing'">
+                                            <span t-field="move.product_id.sudo().description_pickingout"/>
+                                        </p>
+                                        <p t-if="o.picking_type_code == 'incoming'">
+                                            <span t-field="move.product_id.sudo().description_pickingin"/>
+                                        </p>
+                                    </td>
+                                    <td>
+                                        <span t-field="move.product_uom_qty"/>
+                                        <span t-field="move.product_uom"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <table class="table table-sm mt48" t-if="o.move_line_ids and o.state=='done'">
+                            <t t-set="has_serial_invoice_sequence_number_next" t-value="o.move_line_ids.mapped('lot_id')" />
+                            <thead>
+                                <tr>
+                                    <th>
+                                        <strong>Product</strong>
+                                    </th>
+                                    <th name="lot_serial" t-if="has_serial_invoice_sequence_number_next" groups="stock.group_lot_on_delivery_slip">
+                                    Lot/Serial invoice_sequence_number_next
+                                    </th>
+                                    <th class="text-center">
+                                        <strong>Quantity</strong>
+                                    </th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr t-foreach="o.move_line_ids" t-as="move_line">
+                                    <td>
+                                        <span t-field="move_line.product_id"/>
+                                        <p t-if="o.picking_type_code == 'outgoing'">
+                                            <span t-field="move_line.product_id.sudo().description_pickingout"/>
+                                        </p>
+                                        <p t-if="o.picking_type_code == 'incoming'">
+                                            <span t-field="move_line.product_id.sudo().description_pickingin"/>
+                                        </p>
+                                    </td>
+                                    <td t-if="has_serial_invoice_sequence_number_next and move_line.lot_name" groups="stock.group_lot_on_delivery_slip">
+                                        <span t-field="move_line.lot_name"/>
+                                    </td>
+                                    <td t-elif="has_serial_invoice_sequence_number_next" groups="stock.group_lot_on_delivery_slip">
+                                        <span t-field="move_line.lot_id.name"/>
+                                    </td>
+                                    <td class="text-center">
+                                        <span t-field="move_line.qty_done"/>
+                                        <span t-field="move_line.product_uom_id"/>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                        <p>
+                            <t t-if="o.backorder_ids and o.backorder_ids.filtered(lambda x: x.state not in ('done', 'cancel'))">
+                            All items couldn't be shipped, the remaining ones will be shipped as soon as they become available.
+                            </t>
+                        </p>
+                    </div>
+
+                    <div class="guide-block" t-if="o.note">
+                        <h3 class="guide-block-title">Observaciones</h3>
+                        <div class="gui-table">
+                            <p t-field="o.note" />
+                        </div>
+                    </div>
+                </div>
+
+            </xpath>
+        </template>
+    </data>
+</odoo>
